@@ -1,2 +1,781 @@
 # PORTOFOLIO-FELIX-PELUPESSY
-INI ADALAH PORTOFOLIO PRIBADI SAYA
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felix Pelupessy - Curriculum Vitae</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#1F2937',
+                        light: '#F9FAFB',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3B82F6 0%, #10B981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #3B82F6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active::after {
+            width: 100%;
+        }
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3B82F6 0%, #10B981 100%);
+            transition: width 1.5s ease-in-out;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+            z-index: 1;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% - 12px);
+            background-color: #e2e8f0;
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">Felix Pelupessy</a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link active font-medium text-gray-800 hover:text-primary transition-colors">Beranda</a>
+                    <a href="#about" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Tentang</a>
+                    <a href="#experience" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Pengalaman</a>
+                    <a href="#education" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Pendidikan</a>
+                    <a href="#skills" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Keterampilan</a>
+                    <a href="#contact" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Kontak</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
+                <a href="#home" class="block py-2 text-gray-800 hover:text-primary">Beranda</a>
+                <a href="#about" class="block py-2 text-gray-800 hover:text-primary">Tentang</a>
+                <a href="#experience" class="block py-2 text-gray-800 hover:text-primary">Pengalaman</a>
+                <a href="#education" class="block py-2 text-gray-800 hover:text-primary">Pendidikan</a>
+                <a href="#skills" class="block py-2 text-gray-800 hover:text-primary">Keterampilan</a>
+                <a href="#contact" class="block py-2 text-gray-800 hover:text-primary">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-20 md:pt-36 md:pb-28 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                        Halo, Saya <span class="gradient-text">Felix Pelupessy</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">
+                        Mahasiswa Teknik Informatika & Profesional Multidisiplin
+                    </h2>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        Menggabungkan keahlian teknis di bidang IT dengan pengalaman di bidang penjualan dan agroforestri untuk memberikan solusi efisien berbasis teknologi.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="gradient-bg text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-shadow text-center">
+                            Hubungi Saya
+                        </a>
+                        <a href="#experience" class="bg-white text-primary border-2 border-primary font-medium py-3 px-8 rounded-full hover:bg-primary hover:text-white transition-colors text-center">
+                            Lihat Pengalaman
+                        </a>
+                    </div>
+                    <div class="flex mt-10 space-x-6">
+                        <a href="https://linkedin.com/in/felix-pelupessy-0285342ab" target="_blank" class="text-gray-600 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="mailto:felixpelupessy@gmail.com" class="text-gray-600 hover:text-primary transition-colors">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-accent bg-opacity-20 absolute -top-6 -right-6 z-0"></div>
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-secondary bg-opacity-20 absolute -bottom-6 -left-6 z-0"></div>
+                        <div class="relative z-10">
+                            <svg class="w-72 h-72 md:w-96 md:h-96" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#3B82F6" d="M47.7,-57.2C59.9,-47.3,67.2,-31.5,69.4,-15.1C71.6,1.3,68.8,18.2,60.2,31.1C51.7,44,37.4,52.8,21.9,57.8C6.4,62.7,-10.4,63.8,-25.6,58.7C-40.9,53.6,-54.5,42.3,-61.3,27.9C-68.1,13.4,-68,-4.3,-62.1,-19.2C-56.2,-34.1,-44.6,-46.2,-31.5,-55.8C-18.4,-65.4,-3.9,-72.5,9.8,-71.8C23.5,-71.1,35.5,-67.1,47.7,-57.2Z" transform="translate(100 100)" />
+                            </svg>
+                            
+                            <!-- Profile Image -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <svg class="w-48 h-48 md:w-64 md:h-64" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="100" r="80" fill="#F5F5F5"/>
+                                    <circle cx="100" cy="85" r="40" fill="#333"/>
+                                    <path d="M100 135 C60 135 60 180 100 180 C140 180 140 135 100 135 Z" fill="#333"/>
+                                    <circle cx="85" cy="75" r="5" fill="white"/>
+                                    <circle cx="115" cy="75" r="5" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tentang <span class="gradient-text">Saya</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="relative">
+                        <div class="w-full h-full bg-accent bg-opacity-20 absolute top-6 left-6 rounded-lg z-0"></div>
+                        <div class="relative z-10 bg-white p-6 rounded-lg shadow-lg">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="text-4xl text-primary mb-2">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <h3 class="font-bold text-xl mb-1">IT</h3>
+                                    <p class="text-gray-600">Keahlian Teknis</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="text-4xl text-primary mb-2">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <h3 class="font-bold text-xl mb-1">Penjualan</h3>
+                                    <p class="text-gray-600">Hubungan Pelanggan</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="text-4xl text-primary mb-2">
+                                        <i class="fas fa-tree"></i>
+                                    </div>
+                                    <h3 class="font-bold text-xl mb-1">Agroforestri</h3>
+                                    <p class="text-gray-600">Kerja Lingkungan</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="text-4xl text-primary mb-2">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h3 class="font-bold text-xl mb-1">Kerja Tim</h3>
+                                    <p class="text-gray-600">Keterampilan Kolaborasi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-bold mb-4">Mahasiswa Teknik Informatika</h3>
+                    <p class="text-gray-600 mb-6">
+                        Saya adalah mahasiswa Teknik Informatika di Universitas Muhammadiyah Sorong dengan latar belakang multidisiplin di bidang IT, penjualan, dan agroforestri. Pengalaman beragam saya telah membekali saya dengan kombinasi unik antara keterampilan teknis dan soft skills.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Saya unggul dalam administrasi sistem, desain grafis, negosiasi, dan manajemen tim. Fokus saya adalah memberikan hasil dengan meningkatkan efisiensi operasional dan mencapai target melalui solusi berbasis teknologi.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h4 class="font-semibold mb-4">Kompetensi Utama</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Teknis & IT</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Penjualan & Layanan Pelanggan</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Manajerial & Organisasi</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="gradient-bg text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-shadow text-center">
+                            Hubungi Saya
+                        </a>
+                        <a href="#skills" class="bg-white text-primary border-2 border-primary font-medium py-3 px-8 rounded-full hover:bg-primary hover:text-white transition-colors text-center">
+                            Lihat Keterampilan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pengalaman <span class="gradient-text">Kerja</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Perjalanan profesional saya mencakup beberapa industri, memberikan saya beragam keterampilan dan pendekatan adaptif dalam pemecahan masalah.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Experience 1 -->
+                <div class="timeline-item pb-12">
+                    <div class="bg-white rounded-lg shadow-lg p-6 ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Operator Komputer</h3>
+                            <div class="flex items-center mt-2 md:mt-0">
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium">2020 - 2025</span>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-medium text-gray-700 mb-4">Indah Komputer</h4>
+                        <ul class="text-gray-600 space-y-2 list-disc pl-5">
+                            <li>Mengoperasikan dan memelihara sistem komputer</li>
+                            <li>Membantu tugas administratif terkait data dan dokumen</li>
+                            <li>Memberikan dukungan teknis dan pemecahan masalah</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="timeline-item pb-12">
+                    <div class="bg-white rounded-lg shadow-lg p-6 ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Sales Executive</h3>
+                            <div class="flex items-center mt-2 md:mt-0">
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium">2019 - 2020</span>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-medium text-gray-700 mb-4">PT. Astra International Tbk - Honda</h4>
+                        <ul class="text-gray-600 space-y-2 list-disc pl-5">
+                            <li>Menjual motor Honda dan menangani proses pembelian tunai/kredit</li>
+                            <li>Melakukan promosi, canvassing, dan membangun hubungan pelanggan untuk mencapai target penjualan</li>
+                            <li>Mengembangkan strategi penjualan efektif dan memelihara database pelanggan</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="bg-white rounded-lg shadow-lg p-6 ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">TPTI (Tebang Pohon Tanam Produksi)</h3>
+                            <div class="flex items-center mt-2 md:mt-0">
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium">2018 - 2019</span>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-medium text-gray-700 mb-4">PT. Teluk Bintuni Mina Agro Karya</h4>
+                        <ul class="text-gray-600 space-y-2 list-disc pl-5">
+                            <li>Mencatat dan menginventarisasi pohon yang akan ditebang sesuai prosedur</li>
+                            <li>Melakukan penanaman kembali dengan pohon produktif (buah dan tanaman pangan)</li>
+                            <li>Memelihara dan memonitor pertumbuhan tanaman baru</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Riwayat <span class="gradient-text">Pendidikan</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Perjalanan akademis saya telah memberikan fondasi yang kuat dalam pengetahuan teknis dan keterampilan praktis.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Education 1 -->
+                <div class="timeline-item pb-12">
+                    <div class="bg-white rounded-lg shadow-lg p-6 ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Universitas Muhammadiyah Sorong</h3>
+                            <div class="flex items-center mt-2 md:mt-0">
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium">2022 - Sekarang</span>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-medium text-gray-700 mb-4">Program Studi Teknik Informatika</h4>
+                        <p class="text-gray-600">
+                            Saat ini sedang menempuh pendidikan di bidang Teknik Informatika, dengan fokus mengembangkan keterampilan teknis dalam pemrograman, desain sistem, dan manajemen infrastruktur IT.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Education 2 -->
+                <div class="timeline-item">
+                    <div class="bg-white rounded-lg shadow-lg p-6 ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">SMA Negeri 1 Masohi</h3>
+                            <div class="flex items-center mt-2 md:mt-0">
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium">2016 - 2018</span>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-medium text-gray-700 mb-4">Jurusan Ilmu Pengetahuan Sosial</h4>
+                        <p class="text-gray-600">
+                            Menyelesaikan pendidikan menengah atas dengan fokus pada Ilmu Pengetahuan Sosial, mengembangkan pengetahuan dasar dalam ekonomi, sosiologi, dan geografi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Keterampilan <span class="gradient-text">Saya</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Saya telah mengembangkan beragam keterampilan di berbagai disiplin ilmu, memungkinkan saya untuk mendekati masalah dari berbagai perspektif.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Hard Skills -->
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6">
+                    <div class="w-16 h-16 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Hard Skills</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Administrasi & IT
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Penjualan & Pemasaran
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Agroforestri
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6">
+                    <div class="w-16 h-16 rounded-full bg-secondary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Soft Skills</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Komunikasi Efektif & Negosiasi
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Pelayanan Pelanggan (Customer Service)
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Kerja Tim & Kolaborasi
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Core Competencies -->
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6">
+                    <div class="w-16 h-16 rounded-full bg-accent bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-star text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Kemampuan Utama</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            Teknis & IT
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            Penjualan & Layanan Pelanggan
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            Manajerial & Organisasi
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Tools & Technologies -->
+            <div class="mt-16 max-w-5xl mx-auto">
+                <h3 class="text-2xl font-bold mb-8 text-center">Alat & Teknologi</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Office & Design -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h4 class="font-bold text-lg mb-4 flex items-center">
+                            <i class="fas fa-desktop text-primary mr-2"></i>
+                            Perkantoran & Desain
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">MS Office</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Corel Draw</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Canva</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Figma</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Inkscape</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Development & IT -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h4 class="font-bold text-lg mb-4 flex items-center">
+                            <i class="fas fa-code text-secondary mr-2"></i>
+                            Pengembangan & IT
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">VS Code</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Sublime Text</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">GitHub</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">MySQL</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Knime (Dasar)</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Cisco Packet Tracer</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Multimedia -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h4 class="font-bold text-lg mb-4 flex items-center">
+                            <i class="fas fa-film text-accent mr-2"></i>
+                            Multimedia
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Capcut</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hubungi <span class="gradient-text">Saya</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Tertarik untuk bekerja sama atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row max-w-5xl mx-auto">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-2xl font-bold mb-6">Informasi Kontak</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p class="text-gray-600">felixpelupessy@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                    <i class="fab fa-linkedin-in text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">LinkedIn</h4>
+                                    <p class="text-gray-600">linkedin.com/in/felix-pelupessy-0285342ab</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-graduation-cap text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Pendidikan</h4>
+                                    <p class="text-gray-600">Universitas Muhammadiyah Sorong</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-2xl font-bold mb-6">Kirim Pesan</h3>
+                        
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nama Anda</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John Doe">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Anda</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john@example.com">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subjek</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Kesempatan Kerja">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Pesan Anda</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Saya ingin mendiskusikan kesempatan potensial..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="gradient-bg text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-shadow">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold">Felix<span class="text-primary">.</span></a>
+                    <p class="mt-2 text-gray-400 max-w-md">
+                        Mahasiswa Teknik Informatika dengan pengalaman multidisiplin di bidang IT, penjualan, dan agroforestri.
+                    </p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center">
+                    <a href="#home" class="px-4 py-2 hover:text-primary transition-colors">Beranda</a>
+                    <a href="#about" class="px-4 py-2 hover:text-primary transition-colors">Tentang</a>
+                    <a href="#experience" class="px-4 py-2 hover:text-primary transition-colors">Pengalaman</a>
+                    <a href="#education" class="px-4 py-2 hover:text-primary transition-colors">Pendidikan</a>
+                    <a href="#skills" class="px-4 py-2 hover:text-primary transition-colors">Keterampilan</a>
+                    <a href="#contact" class="px-4 py-2 hover:text-primary transition-colors">Kontak</a>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 my-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 Felix Pelupessy. Hak Cipta Dilindungi.
+                </p>
+                
+                <div class="flex space-x-4">
+                    <a href="mailto:felixpelupessy@gmail.com" class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/felix-pelupessy-0285342ab" target="_blank" class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 rounded-full gradient-bg text-white flex items-center justify-center shadow-lg transition-colors z-50 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Navigation Active State
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Show/Hide Back to Top Button
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for header height
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Initialize skill bars animation
+        function animateSkills() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        }
+        
+        // Run animations when elements are in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('skill-bar')) {
+                        animateSkills();
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.skill-bar').forEach(bar => {
+            observer.observe(bar);
+        });
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Trigger initial active state for navigation
+            const scrollEvent = new Event('scroll');
+            window.dispatchEvent(scrollEvent);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9639cd1235d5f93a',t:'MTc1MzI1OTI3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
